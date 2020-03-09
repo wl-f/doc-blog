@@ -18,4 +18,7 @@ markdown编辑器博客原型实现，已实现编辑与文档管理的基础功
 ![编辑页面](https://github.com/Wei-Li-19/doc-blog/blob/master/sinpshot/edit.jpg)
 ![实时预览](https://github.com/Wei-Li-19/doc-blog/blob/master/sinpshot/preview.jpg)
 
+###### 安装包下载
+
 [Mac安装包](https://github.com/Wei-Li-19/doc-blog/blob/master/apps/docBlog-0.1.0.dmg)
+[Windows安装包](https://github.com/Wei-Li-19/doc-blog/blob/master/apps/docBlog-Web-Setup-0.1.0.msi)
