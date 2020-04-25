@@ -1,0 +1,11 @@
+.icon-button {
+    background: none;
+    border: none;
+    color: inherit;
+}
+.icon-button:active {
+    /*border: none;*/
+}
+.c-link {
+    cursor: pointer;
+}

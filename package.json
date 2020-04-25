@@ -1,0 +1,121 @@
+{
+  "name": "doc-blog",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "electron-store": "^5.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "buildMain": "webpack",
+    "dev": "concurrently \"wait-on http://localhost:3000 && electron .\" \"cross-env BROWSER=none npm start\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "prepack": "npm run build && npm run buildMain",
+    "predist": "npm run build && npm run buildMain"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "lw.docBlog",
+    "productName": "docBlog",
+    "copyright": "Copyright © 2020 liwei",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "settings/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extraMetadata": {
+      "main": "./build/main.js"
+    },
+    "extends": null,
+    "mac": {
+      "category": "public.app-category.productivity",
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "dmg": {
+      "background": "assets/appdmg.png",
+      "icon": "assets/icon.icns",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 380,
+          "y": 280,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 280,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    "win": {
+      "target": [
+        "msi",
+        "nsis"
+      ],
+      "icon": "assets/icon.ico",
+      "artifactName": "${productName}-Web-Setup-${version}.${ext}",
+      "publisherName": "liwei"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "perMachine": false
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.1",
+    "electron": "^8.0.3",
+    "electron-builder": "^22.4.0",
+    "electron-is-dev": "^1.1.0",
+    "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
+    "react-simplemde-editor": "^4.1.0",
+    "uuid": "^7.0.2",
+    "wait-on": "^4.0.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
